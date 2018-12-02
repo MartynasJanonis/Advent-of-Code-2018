@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::ifstream input{"day1-2.in"};
+    std::ifstream input{"day1.in"};
     std::ofstream output{"day1-2.out"};
     std::string temp;
     std::vector<int> numbers;

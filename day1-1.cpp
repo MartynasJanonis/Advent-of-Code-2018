@@ -2,7 +2,7 @@
 
 int main()
 {
-    std::ifstream input{"day1-1.in"};
+    std::ifstream input{"day1.in"};
     std::ofstream output{"day1-1.out"};
     std::string temp;
     int sum = 0;

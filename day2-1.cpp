@@ -2,7 +2,7 @@
 #include <algorithm>
 
 int main() {
-    std::ifstream input{"day2-1.in"};
+    std::ifstream input{"day2.in"};
     std::ofstream output{"day2-1.out"};
     std::string temp;
     int count = 0;
