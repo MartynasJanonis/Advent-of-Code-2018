@@ -49,7 +49,6 @@ int main()
             unsigned hash = events[i].desc.find('#');
             unsigned beg = events[i].desc.find('b');
             id = std::stoi(events[i].desc.substr(hash + 1, beg - hash - 2));
-
         }
         else {
             mm1 = std::stoi(events[i].date.substr(events[i].date.find(':') + 1,
