@@ -37,7 +37,7 @@ int main()
     std::vector<Event> events = parseInput(input);
     std::map<int, int> guards; // id to minutes sleeping
     std::map<int, std::map<int, int>>
-        sleep_freq_min; // id to times slept per minute
+        sleep_freq_min; // id to (minute to times slept that minute)
     std::sort(
         events.begin(), events.end(),
         [](const Event& lhs, const Event& rhs) { return lhs.date < rhs.date; });
@@ -49,7 +49,6 @@ int main()
             unsigned hash = events[i].desc.find('#');
             unsigned beg = events[i].desc.find('b');
             id = std::stoi(events[i].desc.substr(hash + 1, beg - hash - 2));
-            // std::cout << id << std::endl;
         }
         else {
             mm1 = std::stoi(events[i].date.substr(events[i].date.find(':') + 1,
