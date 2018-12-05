@@ -26,7 +26,7 @@ int main()
     std::string tmp;
     input >> str;
     std::vector<std::string> combinations;
-    int min_size = -1;
+    unsigned long min_size = str.size();
 
     for (int i = 65; i < 91; ++i) { // ASCII 65 = A; 90 = Z
         tmp = str;
