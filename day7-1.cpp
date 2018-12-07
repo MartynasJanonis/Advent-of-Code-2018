@@ -1,7 +1,5 @@
 #include <fstream>
 #include <set>
-#include <sstream>
-#include <vector>
 
 template <size_t rows, size_t cols>
 bool isAvailable(bool (&g)[rows][cols], char N)
@@ -28,10 +26,9 @@ int main()
 {
     std::ifstream input{"day7.in"};
     std::ofstream output{"day7-1.out"};
-    std::stringstream ss;
     std::string tmp;
     char selected;
-    bool graph[91][91] = {false}; // ascii 'Z'=90
+    bool graph[91][91] = {{false}}; // ascii 'Z'=90
     std::string steps;
     std::set<char> all_nodes;
     std::set<char> available_nodes;
