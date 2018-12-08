@@ -1,7 +1,6 @@
 #include <fstream>
 #include <stack>
 #include <vector>
-#include <iostream>
 
 // TODO: find an iterative solution
 
@@ -26,18 +25,19 @@ Node buildTree(std::ifstream& input)
     return n;
 }
 
-int get_value(Node n){
+int get_value(Node n)
+{
     int val = 0;
-    if(n.children.size()==0){
-        for(int x : n.metadata){
+    if (n.children.size() == 0) {
+        for (int x : n.metadata) {
             val += x;
         }
         return val;
     }
-    else{
-        for(int x : n.metadata){
-            if(x<=n.children.size()){
-                val += get_value(n.children[x-1]);
+    else {
+        for (int x : n.metadata) {
+            if (x <= n.children.size()) {
+                val += get_value(n.children[x - 1]);
             }
         }
     }
@@ -52,5 +52,4 @@ int main()
     Node root = buildTree(input);
     result = get_value(root);
     output << result;
-
 }
