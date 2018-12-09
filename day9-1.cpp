@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <fstream>
+#include <list>
 #include <map>
-#include <vector>
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
     int curr_player = 1;
     std::string skip;
     std::map<int, int> scores;
-    std::vector<int> board;
+    std::list<int> board;
     input >> players >> skip >> skip >> skip >> skip >> skip >> l_marble;
 
     // initial marble placement
@@ -26,7 +26,7 @@ int main()
                     --curr_marble;
                 }
                 else {
-                    curr_marble = board.end() - 1;
+                    curr_marble = std::prev(board.end());
                 }
             }
             scores[curr_player] += *curr_marble;
@@ -37,23 +37,18 @@ int main()
         }
         else {
             // place the marble
-            if (curr_marble == board.end() - 1) {
+            if (curr_marble == std::prev(board.end())) {
                 curr_marble = board.begin();
                 ++curr_marble;
                 curr_marble = board.insert(curr_marble, i);
             }
             else {
-                curr_marble += 2;
+                curr_marble = std::next(curr_marble, 2);
                 curr_marble = board.insert(curr_marble, i);
             }
         }
         // increment the current player
-        if (curr_player < players) {
-            ++curr_player;
-        }
-        else {
-            curr_player = 1;
-        }
+        curr_player = curr_player % players + 1;
     }
     auto high_score = std::max_element(
         scores.begin(), scores.end(),
