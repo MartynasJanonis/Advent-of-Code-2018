@@ -90,7 +90,8 @@ int main()
     std::pair<std::pair<int, int>, std::pair<int, int>> bound_box =
         boundingBoxCoord(points);
 
-    while ((points.end() - 1)->pos.second - points.begin()->pos.second != 9) {
+    while ((points.end() - 1)->pos.second - points.begin()->pos.second !=
+           9) { // this assumes a letter is 10 pt tall
         std::sort(points.begin(), points.end(),
                   [](const Point& p1, const Point& p2) {
                       return p1.pos.second < p2.pos.second;
