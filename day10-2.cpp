@@ -3,8 +3,6 @@
 #include <fstream>
 #include <vector>
 
-// User has to read the output of day10-1.out to complete the puzzle
-
 struct Point {
     std::pair<int, int> pos;
     std::pair<int, int> vel;
