@@ -102,7 +102,7 @@ int main()
     char pic[bound_box.first.second + 1][bound_box.second.first + 1];
     for (auto& y : pic) {
         for (auto& x : y) {
-            x = '.';
+            x = ' ';
         }
     }
     for (Point p : points) {
