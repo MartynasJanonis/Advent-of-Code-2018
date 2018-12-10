@@ -99,10 +99,15 @@ int main()
     moveAllPoints(points, bound_box);
     bound_box = boundingBoxCoord(points);
 
-    char pic[bound_box.first.second + 1][bound_box.second.first + 1];
-    for (auto& y : pic) {
-        for (auto& x : y) {
-            x = ' ';
+    // allocate memory for a 2d array (no VLAs as ISO C++ forbids them)
+    char** pic = new char*[bound_box.first.second + 1];
+    for (int i = 0; i < bound_box.first.second + 1; ++i) {
+        pic[i] = new char[bound_box.second.first + 1];
+    }
+
+    for (int i = 0; i < bound_box.first.second + 1; ++i) {
+        for (int j = 0; j < bound_box.second.first + 1; ++j) {
+            pic[i][j] = ' ';
         }
     }
     for (Point p : points) {
@@ -115,4 +120,9 @@ int main()
         }
         output << '\n';
     }
+
+    for (int i = 0; i < bound_box.first.second + 1; ++i) {
+        delete[] pic[i];
+    }
+    delete[] pic;
 }
