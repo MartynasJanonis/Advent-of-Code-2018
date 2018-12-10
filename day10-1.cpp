@@ -13,17 +13,14 @@ struct Point {
 std::vector<Point> parseInput(std::ifstream& input)
 {
     std::string tmp;
+    char skip_c = 'x';
+    char skip_str[10];
     std::vector<Point> points;
     while (std::getline(input, tmp)) {
         Point p;
-        p.pos.first = std::stoi(tmp.substr(10, tmp.find(',') - 10));
-        p.pos.second = std::stoi(
-            tmp.substr(tmp.find(',') + 2, tmp.find('>') - (tmp.find(',') + 2)));
-        p.vel.first = std::stoi(tmp.substr(
-            tmp.find('>') + 12, (tmp.find_last_of(',') - tmp.find('>') - 12)));
-        p.vel.second = std::stoi(
-            tmp.substr(tmp.find_last_of(',') + 1,
-                       tmp.find_last_of('>') - tmp.find_last_of(',') - 1));
+        std::sscanf(tmp.c_str(), "%10s%d%c%d%c%10s%d%c%d%c", skip_str,
+                    &p.pos.first, &skip_c, &p.pos.second, &skip_c, skip_str,
+                    &p.vel.first, &skip_c, &p.vel.second, &skip_c);
 
         points.push_back(p);
     }
