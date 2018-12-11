@@ -1,6 +1,5 @@
 #include <cmath>
 #include <fstream>
-#include <iostream>
 
 int nthdigit(int num, int n)
 {
