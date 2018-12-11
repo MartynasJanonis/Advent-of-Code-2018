@@ -20,8 +20,8 @@ int computePowerLevel(int x, int y, int sn)
 template <size_t rows, size_t cols>
 void populateGrid(int (&grid)[rows][cols], int sn)
 {
-    for (int i = 1; i < rows; ++i) {
-        for (int j = 1; j < cols; ++j) {
+    for (size_t i = 1; i < rows; ++i) {
+        for (size_t j = 1; j < cols; ++j) {
             grid[i][j] = computePowerLevel(j, i, sn);
         }
     }
