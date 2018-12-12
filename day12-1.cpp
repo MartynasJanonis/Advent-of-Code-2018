@@ -5,7 +5,7 @@ void nextGen(const std::map<std::string, char>& notes, std::string& curr_state)
 {
     std::string init_state = curr_state;
     std::string curr_pot;
-    for (int i = 2; i < init_state.size() - 2; ++i) {
+    for (size_t i = 2; i < init_state.size() - 2; ++i) {
         curr_pot = init_state.substr(i - 2, 5);
         if (notes.find(curr_pot) != notes.end()) {
             curr_state[i] = notes.at(curr_pot);
@@ -41,7 +41,7 @@ int main()
         nextGen(notes, init_state);
     }
 
-    for (int i = 0; i < init_state.size(); ++i) {
+    for (size_t i = 0; i < init_state.size(); ++i) {
         if (init_state[i] == '#') {
             sum += (i - first_pot);
         }
