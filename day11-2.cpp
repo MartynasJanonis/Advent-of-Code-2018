@@ -1,6 +1,5 @@
 #include <cmath>
 #include <fstream>
-#include <iostream>
 
 // WARNING: Brute-force solution, needs optimizing (could use a summed-area
 // table)
