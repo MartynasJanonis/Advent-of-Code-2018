@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include <map>
 
 void nextGen(const std::map<std::string, char>& notes, std::string& curr_state)
@@ -7,13 +8,9 @@ void nextGen(const std::map<std::string, char>& notes, std::string& curr_state)
     std::string curr_pot;
     for (size_t i = 2; i < init_state.size() - 2; ++i) {
         curr_pot = init_state.substr(i - 2, 5);
-        if (notes.find(curr_pot) != notes.end()) {
-            curr_state[i] = notes.at(curr_pot);
-        }
-        else {
-            curr_state[i] = '.';
-        }
+        curr_state[i] = notes.at(curr_pot);
     }
+    curr_state.insert(curr_state.size(), ".");
 }
 
 int main()
@@ -28,7 +25,7 @@ int main()
     getline(input, init_state);
     init_state.erase(init_state.find("initial state:"), 15);
     init_state.insert(0, "....."); // add padding to the left
-    init_state.insert(init_state.size(), "...................................");
+    init_state.insert(init_state.size(), ".....");
     int first_pot = init_state.find_first_of('#'); // find the 0th pot
 
     getline(input, tmp); // ignore the empty line
