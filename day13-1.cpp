@@ -132,8 +132,8 @@ void advanceTime(std::vector<Cart>& carts, std::vector<std::string>& track)
 
 std::pair<int, int> collision(std::vector<Cart>& carts)
 {
-    for (int i = 0; i < carts.size(); ++i) {
-        for (int j = i + 1; j < carts.size(); ++j) {
+    for (size_t i = 0; i < carts.size(); ++i) {
+        for (size_t j = i + 1; j < carts.size(); ++j) {
             if (carts[i].coord == carts[j].coord) {
                 return carts[i].coord;
             }
@@ -154,8 +154,8 @@ int main()
         track.push_back(tmp);
     }
 
-    for (int i = 0; i < track.size(); ++i) {
-        for (int j = 0; j < track[i].size(); ++j) {
+    for (size_t i = 0; i < track.size(); ++i) {
+        for (size_t j = 0; j < track[i].size(); ++j) {
             if (track[i][j] == '<' || track[i][j] == '^' ||
                 track[i][j] == '>' || track[i][j] == 'v') {
                 tmp_crt.cart = track[i][j];
