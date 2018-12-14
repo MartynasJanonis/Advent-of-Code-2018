@@ -40,7 +40,6 @@ void advanceTime(std::vector<Cart>& carts, std::vector<std::string>& track)
             }
             track[crt.coord.second][crt.coord.first - 1] = crt.cart;
             crt.coord.first -= 1;
-            // continue;
         }
         else if (crt.cart == 'v') {
             track[crt.coord.second][crt.coord.first] = crt.on_track;
@@ -65,7 +64,6 @@ void advanceTime(std::vector<Cart>& carts, std::vector<std::string>& track)
             }
             track[crt.coord.second + 1][crt.coord.first] = crt.cart;
             crt.coord.second += 1;
-            // continue;
         }
         else if (crt.cart == '>') {
             track[crt.coord.second][crt.coord.first] = crt.on_track;
@@ -90,7 +88,6 @@ void advanceTime(std::vector<Cart>& carts, std::vector<std::string>& track)
             }
             track[crt.coord.second][crt.coord.first + 1] = crt.cart;
             crt.coord.first += 1;
-            // continue;
         }
         else if (crt.cart == '^') {
             track[crt.coord.second][crt.coord.first] = crt.on_track;
@@ -115,7 +112,6 @@ void advanceTime(std::vector<Cart>& carts, std::vector<std::string>& track)
             }
             track[crt.coord.second - 1][crt.coord.first] = crt.cart;
             crt.coord.second -= 1;
-            // continue;
         }
         if (isCart(crt.on_track)) {
             break;
