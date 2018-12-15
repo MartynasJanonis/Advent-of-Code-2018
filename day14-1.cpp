@@ -1,5 +1,4 @@
 #include <fstream>
-#include <iostream>
 #include <list>
 
 std::pair<int, int> getNewRecipes(int a, int b)
