@@ -44,9 +44,9 @@ int main()
     while (scoreboard.size() <= recipe_amount + 10) {
         next_recipes = getNewRecipes(*curr_rec1, *curr_rec2);
         if (next_recipes.first != -1) {
-            scoreboard.insert(scoreboard.end(), next_recipes.first);
+            scoreboard.push_back(next_recipes.first);
         }
-        scoreboard.insert(scoreboard.end(), next_recipes.second);
+        scoreboard.push_back(next_recipes.second);
         advanceCyclicIterator(scoreboard, curr_rec1, *curr_rec1 + 1);
         advanceCyclicIterator(scoreboard, curr_rec2, *curr_rec2 + 1);
     }
