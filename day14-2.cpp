@@ -62,7 +62,7 @@ int main()
 
         // only seach once every 1000 recipes, as searching is expensive
         if (recipe_amount % 1000 == 0) {
-            fnd = std::search(scoreboard.begin() + recipe_amount - 1000,
+            fnd = std::search(scoreboard.begin() + recipe_amount - 1010,
                               scoreboard.end(), pattern.begin(), pattern.end());
             if (fnd != scoreboard.end()) {
                 is_found = true;
