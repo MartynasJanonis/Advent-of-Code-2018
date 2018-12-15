@@ -30,7 +30,7 @@ int main()
     std::pair<int, int> next_recipes;
     unsigned int recipe_amount;
     input >> recipe_amount;
-    auto res_it = 0;
+    int res_it = 0;
     unsigned int curr_rec1 = 0;
     unsigned int curr_rec2 = 1;
 
