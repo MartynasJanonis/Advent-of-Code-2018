@@ -6,7 +6,6 @@
 
 // WARNING: input has to be trimmed (second part input cannot be present)
 
-enum Register { r1 = 0, r2, r3, r4 };
 enum Instruction { opcode = 0, A, B, C };
 
 bool isWithin(int n, int l, int h) { return n >= l && n <= h; }
