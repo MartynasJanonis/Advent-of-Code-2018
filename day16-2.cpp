@@ -183,7 +183,7 @@ getOperations()
 int main()
 {
     std::ifstream input{"day16.in"};
-    std::ofstream output{"day16-1.out"};
+    std::ofstream output{"day16-2.out"};
     std::string bef, aft;
     char skip_c;
     char skip_str[20];
