@@ -1,7 +1,6 @@
 #include <array>
 #include <fstream>
 #include <functional>
-#include <iostream>
 #include <vector>
 
 // WARNING: input has to be trimmed (second part input cannot be present)
