@@ -188,8 +188,6 @@ int main()
     char skip_c;
     char skip_str[20];
     int t1, t2, t3, t4; // temp values
-    int sum = 0;
-    int three_or_more = 0;
     int i1, i2, i3, i4; // instruction values
     std::vector<std::array<int, 4>> befores;
     std::vector<std::array<int, 4>> operations;
