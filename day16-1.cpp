@@ -3,8 +3,6 @@
 #include <functional>
 #include <vector>
 
-// WARNING: input has to be trimmed (second part input cannot be present)
-
 enum Instruction { opcode = 0, A, B, C };
 
 bool isWithin(int n, int l, int h) { return n >= l && n <= h; }
@@ -203,6 +201,9 @@ int main()
     // parse the input
     while (input.peek() != EOF) {
         getline(input, bef);
+        if (bef.empty()) {
+            break;
+        }
         input >> i1 >> i2 >> i3 >> i4;
         input.ignore(); // ignore the new line
         getline(input, aft);
