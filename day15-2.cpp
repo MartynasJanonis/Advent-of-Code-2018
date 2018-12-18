@@ -12,7 +12,7 @@ struct Unit {
     char type;                 // G or E
     std::pair<int, int> coord; // x,y
     int hp = 200;
-    int atk = 3; // all units have 3 ATK points
+    int atk = 3; // all units have 3 ATK points at the beginning
 };
 
 // compute the Manhattan distance
