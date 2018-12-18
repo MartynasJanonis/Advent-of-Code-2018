@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 
+// WARNING: input has to be trimmed (second part input cannot be present)
+
 enum Register { r1 = 0, r2, r3, r4 };
 enum Instruction { opcode = 0, A, B, C };
 
@@ -188,8 +190,6 @@ int main()
     char skip_c;
     char skip_str[20];
     int t1, t2, t3, t4; // temp values
-    int machine_before[4];
-    int machine_after[4];
     int three_or_more = 0;
     int sum = 0;
     int i1, i2, i3, i4; // instruction values
@@ -218,7 +218,7 @@ int main()
         operations.push_back(std::array<int, 4>{i1, i2, i3, i4});
     }
 
-    for (int i = 0; i < befores.size(); ++i) {
+    for (size_t i = 0; i < befores.size(); ++i) {
         for (auto o : ops) {
             if (o(operations[i], befores[i]) == afters[i]) {
                 ++sum;
