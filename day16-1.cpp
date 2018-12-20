@@ -104,7 +104,7 @@ getOperations()
     });
     // seti
     op.push_back([](std::array<int, 4> operation, std::array<int, 4> before) {
-        if (isWithin(operation[A], 0, 3) && isWithin(operation[C], 0, 3)) {
+        if (isWithin(operation[C], 0, 3)) {
             before[operation[C]] = operation[A];
             return before;
         }
