@@ -60,7 +60,7 @@ void mapFacility(
     }
 }
 
-// search for the longest path
+// search for the path with the most doors
 int BFS(const std::map<std::pair<int, int>, std::vector<std::pair<int, int>>>&
             doors)
 {
