@@ -6,6 +6,9 @@
 #include <set>
 #include <vector>
 
+// idea for a more efficient solution was taken from:
+// https://www.reddit.com/r/adventofcode/comments/a7uk3f/2018_day_20_solutions/ec62b3s/
+
 enum Direction { N = 0, E, S, W };
 
 void join(
