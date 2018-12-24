@@ -6,6 +6,9 @@
 #include <sstream>
 #include <vector>
 
+// WARNING: generating all the possible register 3 values takes some time, a
+// faster solution might be possible
+
 enum Instruction { opcode = 0, A, B, C };
 
 bool isWithin(int n, int l, int h) { return n >= l && n <= h; }
