@@ -15,7 +15,7 @@ getOperations()
                                                  std::array<int, 4>)>>
         op;
 
-    // if 0th value of the resul is -1 - function application unsuccessful
+    // if 0th value of the result is -1 - function application unsuccessful
 
     // addr
     op.push_back([](std::array<int, 4> operation, std::array<int, 4> before) {

@@ -18,7 +18,7 @@ getInstructions()
                                                  std::array<int, 6>)>>
         ins;
 
-    // if 0th value of the resul is -1 - function application unsuccessful
+    // if 0th value of the result is -1 - function application unsuccessful
 
     // addr
     ins.push_back(
