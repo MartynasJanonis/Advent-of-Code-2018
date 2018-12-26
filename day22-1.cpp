@@ -49,10 +49,10 @@ int main()
                 &target.second);
 
     std::vector<std::vector<unsigned int>> geo_index(
-        target.second + 1, std::vector<unsigned int>(target.first + 1, -1));
+        target.second + 1, std::vector<unsigned int>(target.first + 1));
 
     std::vector<std::vector<unsigned int>> erosion_lvl(
-        target.second + 1, std::vector<unsigned int>(target.first + 1, -1));
+        target.second + 1, std::vector<unsigned int>(target.first + 1));
 
     for (int i = 0; i <= target.second; ++i) {
         for (int j = 0; j <= target.first; ++j) {
