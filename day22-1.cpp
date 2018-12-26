@@ -5,7 +5,7 @@
 void getGeoIndex(std::vector<std::vector<unsigned int>>& geo_index,
                  const std::vector<std::vector<unsigned int>>& erosion_lvl,
                  unsigned int x, unsigned int y,
-                 const std::pair<int, int>& target)
+                 const std::pair<unsigned int, unsigned int>& target)
 {
     if (x == 0 && y == 0) {
         geo_index[y][x] = 0;
@@ -37,7 +37,7 @@ int main()
 {
     std::ifstream input{"day22.in"};
     std::ofstream output{"day22-1.out"};
-    std::pair<int, int> target;
+    std::pair<unsigned int, unsigned int> target;
     unsigned int depth;
     unsigned int risk_lvl = 0;
     std::string tmp;      // for skipping strings
@@ -45,7 +45,7 @@ int main()
     input >> tmp >> depth;
     input.ignore(); // ignore the new line
     getline(input, tmp);
-    std::sscanf(tmp.c_str(), "%7s %d%c%d", s_str, &target.first, &s_chr,
+    std::sscanf(tmp.c_str(), "%7s %u%c%u", s_str, &target.first, &s_chr,
                 &target.second);
 
     std::vector<std::vector<unsigned int>> geo_index(
@@ -54,8 +54,8 @@ int main()
     std::vector<std::vector<unsigned int>> erosion_lvl(
         target.second + 1, std::vector<unsigned int>(target.first + 1));
 
-    for (int i = 0; i <= target.second; ++i) {
-        for (int j = 0; j <= target.first; ++j) {
+    for (unsigned int i = 0; i <= target.second; ++i) {
+        for (unsigned int j = 0; j <= target.first; ++j) {
             getGeoIndex(geo_index, erosion_lvl, j, i, target);
             getErosionLevel(erosion_lvl, geo_index, j, i, depth);
             risk_lvl += erosion_lvl[i][j] % 3;
