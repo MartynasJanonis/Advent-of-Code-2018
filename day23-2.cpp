@@ -1,11 +1,11 @@
 #include <algorithm>
-#include <array>
-#include <climits>
 #include <fstream>
 #include <map>
 #include <queue>
 #include <tuple>
 #include <vector>
+
+// A "divide the box" solution
 
 // compute the Manhattan distance
 int MDistance(std::tuple<int, int, int> a, std::tuple<int, int, int> b)
